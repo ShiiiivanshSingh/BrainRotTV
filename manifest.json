@@ -2,18 +2,27 @@
   "manifest_version": 3,
   "name": "My Skibidi Extension",
   "version": "1.0",
-  "description": "A simple extension that says Hello World",
+  "description": "A simple extension that brain rots",
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
   },
   "icons": {
-    "48": "icon48.svg",
-    "128": "icon128.svg"
+    "48": "icon48.png",
+    "128": "icon128.png"
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self'; object-src 'self'; frame-src https://www.youtube.com/"
+    "extension_pages": "script-src 'self'; object-src 'self';"
   },
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "tabs"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*",
+    "https://*.youtube.com/*"
   ]
 } 
