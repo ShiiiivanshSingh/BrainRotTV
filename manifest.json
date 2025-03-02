@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "My Skibidi Extension",
+  "version": "1.0",
+  "description": "A simple extension that says Hello World",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "48": "icon48.svg",
+    "128": "icon128.svg"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; frame-src https://www.youtube.com/"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+} 
