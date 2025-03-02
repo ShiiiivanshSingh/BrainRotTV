@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Extension</title>
+  <title>Minimal Extension</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -12,9 +14,9 @@
     body {
       width: 300px;
       height: 400px;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      font-family: system-ui, -apple-system, sans-serif;
-      color: white;
+      background: #0a0a0a;
+      font-family: 'Montserrat', sans-serif;
+      color: #fff;
       overflow: hidden;
     }
 
@@ -22,41 +24,155 @@
       height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 1rem;
       padding: 1rem;
-      text-align: center;
+      background: rgba(10, 10, 10, 0.98);
     }
 
     .header {
-      padding: 1rem;
-      background: rgba(255, 255, 255, 0.1);
+      margin-bottom: 1rem;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(10px);
       border-radius: 8px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    #openYoutube {
-      padding: 10px 20px;
-      background: white;
-      color: #764ba2;
-      border: none;
-      border-radius: 4px;
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #fff;
+      text-align: center;
+    }
+
+    .video-selector {
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .video-selector::after {
+      content: '\f0d7';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #fff;
+      pointer-events: none;
+      font-size: 0.8rem;
+    }
+
+    select {
+      width: 100%;
+      padding: 0.8rem;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.9rem;
       cursor: pointer;
-      font-weight: bold;
-      margin-top: 1rem;
+      backdrop-filter: blur(10px);
+      appearance: none;
+      outline: none;
+      text-align-last: center;
     }
 
-    #openYoutube:hover {
-      background: #f0f0f0;
+    select:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    select:focus {
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+    }
+
+    select option {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 10px;
+    }
+
+    .video-container {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      max-height: 280px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+
+    .controls {
+      margin-top: 1rem;
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .control-button {
+      padding: 0.5rem 1rem;
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .control-button:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .control-button i {
+      font-size: 1rem;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h2>My Skibidi Extension</h2>
+      <h2>Dr. BrainRot</h2>
     </div>
-    <button id="openYoutube">Open YouTube</button>
+    <div class="video-selector">
+      <select id="footageSelect">
+        <option value="subway">Subway Surfers</option>
+        <option value="family">Family Guy</option>
+      </select>
+    </div>
+    <div class="video-container">
+      <video id="videoPlayer" autoplay loop muted playsinline>
+        <source src="subway_gameplay.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="controls">
+      <button id="playPauseButton" class="control-button">
+        <i class="fas fa-pause"></i>
+      </button>
+      <button id="skipButton" class="control-button">
+        <i class="fas fa-wand-magic-sparkles"></i>
+      </button>
+    </div>
   </div>
   <script src="popup.js"></script>
 </body>
