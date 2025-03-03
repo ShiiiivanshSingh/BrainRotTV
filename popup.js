@@ -3,10 +3,37 @@ document.addEventListener('DOMContentLoaded', function() {
   const video = document.getElementById('videoPlayer');
   const playPauseButton = document.getElementById('playPauseButton');
   const skipButton = document.getElementById('skipButton');
+  const pinButton = document.getElementById('pinButton');
+  const loadingSpinner = document.querySelector('.loading-spinner');
   
   select.addEventListener('change', changeVideo);
   playPauseButton.addEventListener('click', togglePlayPause);
   skipButton.addEventListener('click', () => setRandomTimestamp(video));
+  pinButton.addEventListener('click', togglePictureInPicture);
+
+  // Show spinner when video is loading
+  video.addEventListener('loadstart', () => {
+    loadingSpinner.style.display = 'block';
+  });
+
+  // Hide spinner when video can play
+  video.addEventListener('canplay', () => {
+    loadingSpinner.style.display = 'none';
+  });
+
+  // Also hide spinner if video errors
+  video.addEventListener('error', () => {
+    loadingSpinner.style.display = 'none';
+  });
+
+  // Add PiP event listeners
+  video.addEventListener('enterpictureinpicture', () => {
+    pinButton.classList.add('active');
+  });
+
+  video.addEventListener('leavepictureinpicture', () => {
+    pinButton.classList.remove('active');
+  });
 
   // Initial random timestamp for the first video
   setRandomTimestamp(video);
@@ -57,26 +84,20 @@ function togglePlayPause() {
     icon.className = 'fas fa-play';
   }
 }
+
+async function togglePictureInPicture() {
+  const video = document.getElementById('videoPlayer');
+  const pinButton = document.getElementById('pinButton');
   
-
-
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const video = document.getElementById('videoPlayer');
-      const loadingSpinner = document.querySelector('.loading-spinner');
-
-      // Show spinner when video is loading
-      video.addEventListener('loadstart', () => {
-        loadingSpinner.style.display = 'block';
-      });
-
-      // Hide spinner when video can play
-      video.addEventListener('canplay', () => {
-        loadingSpinner.style.display = 'none';
-      });
-
-      // Also hide spinner if video errors
-      video.addEventListener('error', () => {
-        loadingSpinner.style.display = 'none';
-      });
-    });
+  try {
+    if (document.pictureInPictureElement) {
+      await document.exitPictureInPicture();
+      pinButton.classList.remove('active');
+    } else {
+      await video.requestPictureInPicture();
+      pinButton.classList.add('active');
+    }
+  } catch (error) {
+    console.error('Picture-in-Picture failed:', error);
+  }
+}

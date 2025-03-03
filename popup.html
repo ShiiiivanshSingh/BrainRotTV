@@ -98,14 +98,65 @@
       background: rgba(255, 255, 255, 0.03);
       border-radius: 8px;
       overflow: hidden;
+      position: relative;
+      width: 100%;
+      height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
-      max-height: 280px;
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .pin-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      transition: all 0.2s ease;
+      z-index: 100;
+      color: white;
+    }
+
+    .video-container:hover .pin-button {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    .pin-button:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.3);
+      transform: scale(1.1);
+    }
+
+    .pin-button.active {
+      opacity: 1;
+      background: rgba(0, 255, 136, 0.2);
+      border-color: rgba(0, 255, 136, 0.4);
+      color: #00ff88;
+    }
+
+    .pin-button i {
+      font-size: 0.9rem;
+    }
+
+    video {
       position: relative;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 4px;
     }
 
     .loading-spinner {
@@ -126,29 +177,6 @@
     @keyframes spin {
       0% { transform: translate(-50%, -50%) rotate(0deg); }
       100% { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    .video-container::before {
-      content: '';
-      display: block;
-      padding-top: 56.25%; /* for 16:9 aspect ratio */
-    }
-
-    video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-
-    video {
-      width: 100%;
-      height: auto;
-      max-height: 100%;
-      object-fit: contain;
-      border-radius: 4px;
     }
 
     .controls {
@@ -230,6 +258,9 @@
     </div>
     <div class="video-container">
       <div class="loading-spinner"></div>
+      <button class="pin-button" id="pinButton">
+        <i class="fas fa-thumbtack"></i>
+      </button>
       <video id="videoPlayer" autoplay loop muted playsinline>
         <source src="footage\subway\subway_gameplay.mp4" type="video/mp4">
       </video>
