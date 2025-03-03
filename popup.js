@@ -48,6 +48,8 @@ function changeVideo() {
     source.src = 'footage/subway/subway_gameplay.mp4';
   } else if (select.value === 'family') {
     source.src = 'footage/familyguy/family_guy.mp4';
+  } else if (select.value === 'gta') {
+    source.src = 'footage/gta/gta_ramp.mp4';
   }
   
   // Force video reload and play
