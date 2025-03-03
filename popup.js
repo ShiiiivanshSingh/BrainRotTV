@@ -11,22 +11,22 @@ document.addEventListener('DOMContentLoaded', function() {
   skipButton.addEventListener('click', () => setRandomTimestamp(video));
   pinButton.addEventListener('click', togglePictureInPicture);
 
-  // Show spinner when video is loading
+ 
   video.addEventListener('loadstart', () => {
     loadingSpinner.style.display = 'block';
   });
 
-  // Hide spinner when video can play
+ 
   video.addEventListener('canplay', () => {
     loadingSpinner.style.display = 'none';
   });
 
-  // Also hide spinner if video errors
+  
   video.addEventListener('error', () => {
     loadingSpinner.style.display = 'none';
   });
 
-  // Add PiP event listeners
+ 
   video.addEventListener('enterpictureinpicture', () => {
     pinButton.classList.add('active');
   });
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     pinButton.classList.remove('active');
   });
 
-  // Initial random timestamp for the first video
+ 
   setRandomTimestamp(video);
 });
 
