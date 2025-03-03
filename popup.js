@@ -18,9 +18,9 @@ function changeVideo() {
   const source = video.querySelector('source');
   
   if (select.value === 'subway') {
-    source.src = 'subway_gameplay.mp4';
+    source.src = 'footage/subway/subway_gameplay.mp4';
   } else if (select.value === 'family') {
-    source.src = 'family_guy.mp4';
+    source.src = 'footage/familyguy/family_guy.mp4';
   }
   
   // Force video reload and play
@@ -58,3 +58,25 @@ function togglePlayPause() {
   }
 }
   
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const video = document.getElementById('videoPlayer');
+      const loadingSpinner = document.querySelector('.loading-spinner');
+
+      // Show spinner when video is loading
+      video.addEventListener('loadstart', () => {
+        loadingSpinner.style.display = 'block';
+      });
+
+      // Hide spinner when video can play
+      video.addEventListener('canplay', () => {
+        loadingSpinner.style.display = 'none';
+      });
+
+      // Also hide spinner if video errors
+      video.addEventListener('error', () => {
+        loadingSpinner.style.display = 'none';
+      });
+    });
