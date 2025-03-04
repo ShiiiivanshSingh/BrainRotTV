@@ -22,8 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   
-  video.addEventListener('error', () => {
+  video.addEventListener('error', (e) => {
     loadingSpinner.style.display = 'none';
+    console.error('Video error:', e.target.error);
+    // Display a user-friendly error message if needed
   });
 
  
@@ -43,6 +45,10 @@ function changeVideo() {
   const select = document.getElementById('footageSelect');
   const video = document.getElementById('videoPlayer');
   const source = video.querySelector('source');
+  const loadingSpinner = document.querySelector('.loading-spinner');
+  
+  // Show loading spinner when changing video
+  loadingSpinner.style.display = 'block';
   
   if (select.value === 'subway') {
     source.src = 'footage/subway/subway_gameplay.mp4';
@@ -57,7 +63,10 @@ function changeVideo() {
   video.addEventListener('loadedmetadata', function() {
     setRandomTimestamp(video);
     video.play()
-      .catch(error => console.error('Error playing video:', error));
+      .catch(error => {
+        console.error('Error playing video:', error);
+        loadingSpinner.style.display = 'none';
+      });
   }, { once: true });
 }
 
