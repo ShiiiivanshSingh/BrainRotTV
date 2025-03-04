@@ -98,10 +98,10 @@ Dr. BrainRot comes with 4 skibidi themes to match your mood:
 ## 🎯 Features Coming Soon
 
 * 📦 More brainrot content options
-* ⚡ Quick shortcuts for controls
-* 🔊 Volume control
-* 📱 Mobile browser support
-* 🖥️ Multi-monitor PiP support
+* ⚡ guys i dont have a job
+* 🔊 i will not update it lol
+* 📱 cry about it
+* 🖥️ uwu
 
 ## 🤝 Contributing
 
@@ -115,13 +115,17 @@ Contributions are welcome! Here's how you can help:
 6. Open a Pull Request
 
  ## 🔧 Screenshots!
-
+<div align="center">
+  
  ![image](https://github.com/user-attachments/assets/86bc4352-7071-473f-aa5e-2f1b030b8b4f)
+
+  
 ![image](https://github.com/user-attachments/assets/9c2be2f6-6065-4dfb-a8f6-5868522fcdb9)
 
  
-![image](https://github.com/user-attachments/assets/cfc79a50-7fef-44df-b4ba-230018b7f8ed)
+![image](https://github.com/user-attachments/assets/88ba3210-2b62-4e5b-9d19-7afff8fa3df7)
 
+</div>
 
 ## 📄 License
 
