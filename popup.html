@@ -153,9 +153,14 @@
       border: 1px solid #DFB1B6;
     }
 
-    .theme-item[data-theme="dark-blue"]::before {
-      background: #234272;
-      border: 1px solid #101E42;
+    .theme-item[data-theme="matrix"]::before {
+      background: #000000;
+      border: 1px solid #00FF00;
+    }
+    
+    .theme-item[data-theme="overdrive"]::before {
+      background: #140021;
+      border: 1px solid #560090;
     }
 
     .active-theme {
@@ -231,43 +236,132 @@
       color: #333;
     }
     
-    /* Blue Theme */
-    body.theme-dark-blue {
-      background: #234272;
-      color: #fff;
+    /* Matrix niyo niyo!!!!!!! */
+    body.theme-matrix {
+      background: #000000;
+      color: #00FF00;
     }
     
-    body.theme-dark-blue .container {
-      background: rgba(35, 66, 114, 0.98);
+    body.theme-matrix .container {
+      background: rgba(0, 0, 0, 0.98);
     }
     
-    body.theme-dark-blue .header {
-      background: rgba(16, 30, 66, 0.3);
-      border: 1px solid rgba(16, 30, 66, 0.5);
+    body.theme-matrix .header {
+      background: rgba(0, 255, 0, 0.1);
+      border: 1px solid rgba(0, 255, 0, 0.3);
     }
     
-    body.theme-dark-blue select {
-      background: rgba(16, 30, 66, 0.3);
-      border: 1px solid rgba(16, 30, 66, 0.5);
+    body.theme-matrix select {
+      background: rgba(0, 255, 0, 0.1);
+      border: 1px solid rgba(0, 255, 0, 0.3);
+      color: #00FF00;
     }
     
-    body.theme-dark-blue select option {
-      background: #234272;
+    body.theme-matrix select option {
+      background: #000000;
+      color: #00FF00;
     }
     
-    body.theme-dark-blue .video-container {
-      background: rgba(16, 30, 66, 0.2);
-      border: 1px solid rgba(16, 30, 66, 0.4);
+    body.theme-matrix .video-container {
+      background: rgba(0, 255, 0, 0.05);
+      border: 1px solid rgba(0, 255, 0, 0.2);
     }
     
-    body.theme-dark-blue .control-button {
-      background: rgba(16, 30, 66, 0.3);
-      border: 1px solid rgba(16, 30, 66, 0.5);
+    body.theme-matrix .control-button {
+      background: rgba(0, 255, 0, 0.1);
+      border: 1px solid rgba(0, 255, 0, 0.3);
+      color: #00FF00;
     }
     
-    body.theme-dark-blue .settings-content {
-      background: rgba(35, 66, 114, 0.97);
-      border: 1px solid rgba(16, 30, 66, 0.5);
+    body.theme-matrix .settings-content {
+      background: rgba(0, 0, 0, 0.97);
+      border: 1px solid rgba(0, 255, 0, 0.3);
+    }
+    
+    body.theme-matrix .settings-btn {
+      color: #00FF00;
+    }
+    
+    body.theme-matrix .pin-button {
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid rgba(0, 255, 0, 0.3);
+      color: #00FF00;
+    }
+    
+    body.theme-matrix .credit-text a {
+      color: #00FF00;
+    }
+    
+    body.theme-matrix .credit-text a::after {
+      background-color: #00FF00;
+    }
+    
+    body.theme-matrix .video-selector::after {
+      color: #00FF00;
+    }
+    
+    /* Overdrive Theme */
+    body.theme-overdrive {
+      background: #140021;
+      color: #ffffff;
+    }
+    
+    body.theme-overdrive .container {
+      background: rgba(20, 0, 33, 0.98);
+    }
+    
+    body.theme-overdrive .header {
+      background: rgba(86, 0, 144, 0.2);
+      border: 1px solid rgba(86, 0, 144, 0.4);
+    }
+    
+    body.theme-overdrive select {
+      background: rgba(86, 0, 144, 0.2);
+      border: 1px solid rgba(86, 0, 144, 0.4);
+      color: #ffffff;
+    }
+    
+    body.theme-overdrive select option {
+      background: #140021;
+      color: #ffffff;
+    }
+    
+    body.theme-overdrive .video-container {
+      background: rgba(86, 0, 144, 0.1);
+      border: 1px solid rgba(86, 0, 144, 0.3);
+    }
+    
+    body.theme-overdrive .control-button {
+      background: rgba(86, 0, 144, 0.2);
+      border: 1px solid rgba(86, 0, 144, 0.4);
+      color: #ffffff;
+    }
+    
+    body.theme-overdrive .settings-content {
+      background: rgba(20, 0, 33, 0.97);
+      border: 1px solid rgba(86, 0, 144, 0.4);
+    }
+    
+    body.theme-overdrive .settings-btn {
+      color: #ffffff;
+    }
+    
+    body.theme-overdrive .pin-button {
+      background: rgba(20, 0, 33, 0.7);
+      border: 1px solid rgba(86, 0, 144, 0.3);
+      color: #ffffff;
+    }
+    
+    body.theme-overdrive .credit-text a {
+      color: #ffffff;
+    }
+    
+    body.theme-overdrive .credit-text a::after {
+      background-color: #560090;
+    }
+    
+    body.theme-overdrive .video-selector::after {
+      color: #ffffff;
     }
 
     .video-selector {
@@ -519,7 +613,9 @@
     <div class="settings-submenu" id="themeSubmenu" style="display: none;">
       <div class="theme-item active-theme" data-theme="dark">Dark</div>
       <div class="theme-item" data-theme="light">Kawaii</div>
-      <div class="theme-item" data-theme="dark-blue">Blue</div>
+      
+      <div class="theme-item" data-theme="overdrive">Overdrive</div>
+      <div class="theme-item" data-theme="matrix">Matrix</div>
     </div>
     <a href="https://github.com/ShiiiivanshSingh/BrainRotTV" target="_blank" class="settings-item">
       <i class="fab fa-github"></i> Contribute!
