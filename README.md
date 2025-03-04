@@ -4,7 +4,7 @@
   <h1>Dr. BrainRot 🎬</h1>
   <p>A minimal browser extension for endless entertainment with random brainrot clips.</p>
   
-  <a href="https://github.com/ShiiiivanshSingh/BrainRotTV/archive/refs/tags/release.zip"><img src="https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome Extension"></a>
+  <a href="https://github.com/ShiiiivanshSingh/BrainRotTV/archive/refs/tags/build2.zip"><img src="https://img.shields.io/badge/Chrome-Extension-4285F4?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Chrome Extension"></a>
 
 <a href="#-getting-started"><img src="https://img.shields.io/badge/🔧%20How%20to%20Install-FF5733?style=for-the-badge" alt="How to Install"></a>
 
@@ -71,7 +71,7 @@ Dr. BrainRot comes with 4 skibidi themes to match your mood:
 ## 🚀 Getting Started
 
 ### Installation
-1. [Download the extension files](https://github.com/ShiiiivanshSingh/BrainRotTV/archive/refs/tags/release.zip)
+1. [Download the extension files](https://github.com/ShiiiivanshSingh/BrainRotTV/archive/refs/tags/build2.zip)
 2. Open Chrome and go to:
 
    ```bash
@@ -139,7 +139,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   <a href="https://x.com/de_mirage_fan"><img src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="Twitter"></a>
 </div>
 <div align="center">
-  <a href="https://github.com/ShiiiivanshSingh/BrainRotTV/archive/refs/tags/release.zip"><img src="https://img.shields.io/badge/🔽%20Download%20Extension-FF5733?style=for-the-badge" alt="Download Extension"></a>
+  <a href="https://github.com/ShiiiivanshSingh/BrainRotTV/archive/refs/tags/build2.zip"><img src="https://img.shields.io/badge/🔽%20Download%20Extension-FF5733?style=for-the-badge" alt="Download Extension"></a>
   <a href="https://github.com/ShiiiivanshSingh/BrainRotTV/"><img src="https://img.shields.io/badge/📦%20View%20on%20GitHub-28A745?style=for-the-badge" alt="View on GitHub"></a>
 </div>
 
