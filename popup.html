@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Minimal Extension</title>
+  <title>Dr. BrainRot</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
@@ -35,13 +35,239 @@
       backdrop-filter: blur(10px);
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
 
     h2 {
       font-size: 1.2rem;
       font-weight: 600;
       color: #fff;
+    }
+
+    .settings-dropdown {
+      position: relative;
+      display: inline-block;
+      z-index: 9000;
+    }
+
+    .settings-btn {
+      background: transparent;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      font-size: 1.1rem;
+      padding: 0.3rem;
+      transition: all 0.2s ease;
+    }
+
+    .settings-btn:hover {
+      transform: rotate(45deg);
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .settings-content {
+      display: none;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background: rgba(30, 30, 30, 0.97);
+      min-width: 180px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
+      z-index: 99999 !important;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .settings-content.show {
+      display: block;
+    }
+
+    .settings-item {
+      color: white;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: all 0.2s ease;
+    }
+
+    .settings-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .settings-item:first-child {
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .settings-item:last-child {
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+
+    .settings-item i {
+      margin-right: 8px;
+      width: 20px;
       text-align: center;
+    }
+
+    .settings-submenu {
+      margin-top: 6px;
+      padding: 6px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .theme-item {
+      padding: 10px 16px 10px 36px;
+      font-size: 0.8rem;
+      position: relative;
+    }
+
+    .theme-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .theme-item::before {
+      content: '';
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .theme-item[data-theme="dark"]::before {
+      background: #0a0a0a;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .theme-item[data-theme="light"]::before {
+      background: #F5EAE3;
+      border: 1px solid #DFB1B6;
+    }
+
+    .theme-item[data-theme="dark-blue"]::before {
+      background: #234272;
+      border: 1px solid #101E42;
+    }
+
+    .active-theme {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    
+    body.theme-light {
+      background: #F5EAE3;
+      color: #333;
+    }
+    
+    body.theme-light .container {
+      background: rgba(245, 234, 227, 0.98);
+    }
+    
+    body.theme-light .header {
+      background: rgba(223, 177, 182, 0.2);
+      border: 1px solid rgba(223, 177, 182, 0.4);
+    }
+    
+    body.theme-light h2 {
+      color: #333;
+    }
+    
+    body.theme-light .settings-btn {
+      color: #333;
+    }
+    
+    body.theme-light .video-selector::after {
+      color: #333;
+    }
+    
+    body.theme-light select {
+      background: rgba(223, 177, 182, 0.2);
+      border: 1px solid rgba(223, 177, 182, 0.4);
+      color: #333;
+    }
+    
+    body.theme-light select option {
+      background: #F5EAE3;
+      color: #333;
+    }
+    
+    body.theme-light .video-container {
+      background: rgba(223, 177, 182, 0.1);
+      border: 1px solid rgba(223, 177, 182, 0.3);
+    }
+    
+    body.theme-light .pin-button {
+      background: rgba(223, 177, 182, 0.7);
+      border: 1px solid rgba(223, 177, 182, 0.3);
+      color: #333;
+    }
+    
+    body.theme-light .control-button {
+      background: rgba(223, 177, 182, 0.2);
+      border: 1px solid rgba(223, 177, 182, 0.4);
+      color: #333;
+    }
+    
+    body.theme-light .credit-text a {
+      color: #333;
+    }
+    
+    body.theme-light .settings-content {
+      background: rgba(245, 234, 227, 0.97);
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      border: 1px solid rgba(223, 177, 182, 0.4);
+    }
+    
+    body.theme-light .settings-item {
+      color: #333;
+    }
+    
+    /* Blue Theme */
+    body.theme-dark-blue {
+      background: #234272;
+      color: #fff;
+    }
+    
+    body.theme-dark-blue .container {
+      background: rgba(35, 66, 114, 0.98);
+    }
+    
+    body.theme-dark-blue .header {
+      background: rgba(16, 30, 66, 0.3);
+      border: 1px solid rgba(16, 30, 66, 0.5);
+    }
+    
+    body.theme-dark-blue select {
+      background: rgba(16, 30, 66, 0.3);
+      border: 1px solid rgba(16, 30, 66, 0.5);
+    }
+    
+    body.theme-dark-blue select option {
+      background: #234272;
+    }
+    
+    body.theme-dark-blue .video-container {
+      background: rgba(16, 30, 66, 0.2);
+      border: 1px solid rgba(16, 30, 66, 0.4);
+    }
+    
+    body.theme-dark-blue .control-button {
+      background: rgba(16, 30, 66, 0.3);
+      border: 1px solid rgba(16, 30, 66, 0.5);
+    }
+    
+    body.theme-dark-blue .settings-content {
+      background: rgba(35, 66, 114, 0.97);
+      border: 1px solid rgba(16, 30, 66, 0.5);
     }
 
     .video-selector {
@@ -245,10 +471,15 @@
     }
   </style>
 </head>
-<body>
+<body class="theme-dark">
   <div class="container">
     <div class="header">
       <h2>Dr. BrainRot</h2>
+      <div class="settings-dropdown">
+        <button class="settings-btn" id="settingsButton">
+          <i class="fas fa-cog"></i>
+        </button>
+      </div>
     </div>
     <div class="video-selector">
       <select id="footageSelect">
@@ -278,6 +509,21 @@
     <div class="credit-text">
       <a href="https://github.com/ShiiiivanshSingh" target="_blank">project by shivansh</a>
     </div>
+  </div>
+  
+  <!-- Settings dropdown moved outside the container -->
+  <div class="settings-content" id="settingsDropdown">
+    <div class="settings-item" id="themeToggle">
+      <i class="fas fa-palette"></i> Theme
+    </div>
+    <div class="settings-submenu" id="themeSubmenu" style="display: none;">
+      <div class="theme-item active-theme" data-theme="dark">Dark</div>
+      <div class="theme-item" data-theme="light">Kawaii</div>
+      <div class="theme-item" data-theme="dark-blue">Blue</div>
+    </div>
+    <a href="https://github.com/ShiiiivanshSingh/BrainRotTV" target="_blank" class="settings-item">
+      <i class="fab fa-github"></i> Contribute!
+    </a>
   </div>
   
   <script src="popup.js"></script>
