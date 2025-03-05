@@ -102,6 +102,8 @@ Dr. BrainRot comes with 4 skibidi themes to match your mood:
 * 🔊 i will not update it lol
 * 📱 cry about it
 * 🖥️ uwu
+  
+
 
 ## 🤝 Contributing
 
