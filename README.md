@@ -50,6 +50,7 @@ Welcome to Dr. BrainRot! A browser extension that lets you watch endless loops o
   </br>Ramp Brainrot from Grand Theft Auto 
 
 
+
 ## 🔧 Technologies Used
 
 <div align="center">
