@@ -13,8 +13,6 @@
 
 Welcome to Dr. BrainRot! A browser extension that lets you watch endless loops of brainrot clips. Perfect for those moments when you need a quick lil dopamine boost!
 
-
-
 ## ✨ Key Features
 
 * 🎥 **Multiple Brainrots!**
